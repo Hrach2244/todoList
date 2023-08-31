@@ -1,0 +1,57 @@
+const addTodo = () => {
+    const todoListUl = document.querySelector("#todo-list");
+    const todoForm = document.querySelector("#todoForm");
+    const todoInput = document.querySelector("#todoInput");
+
+    todoForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+
+        const todoValue = todoInput.value.trim();
+
+        if (todoValue === "") return;
+
+        const li = document.createElement("li");
+
+        li.classList.add("todo-list__item");
+
+        li.innerHTML = `
+            <div class="todo-list__info">
+                <p class="todo-list__text">${todoValue}</p>
+                <span class="todo-list__status">⛔</span>
+            </div>
+            <div class="todo-list__buttons">
+                <div class="buttons">
+                    <button class="btn check-todo-btn">Check</button>
+                    <button class="btn remove-todo-btn">
+                        <i class="fa-solid fa-trash"></i>
+                    </button>
+                </div>
+            </div>
+        `;
+
+        const todoStatus = li.querySelector(".todo-list__status");
+        const checkBtn = li.querySelector(".check-todo-btn");
+        const removeBtn = li.querySelector(".remove-todo-btn");
+
+        checkBtn.addEventListener("click", () => {
+            li.classList.toggle("checked");
+
+            if (li.classList.contains("checked")) {
+                todoStatus.textContent = "✅";
+                checkBtn.textContent = "Uncheck";
+            } else {
+                todoStatus.textContent = "⛔";
+                checkBtn.textContent = "Check";
+            }
+        });
+
+        removeBtn.addEventListener("click", () => {
+            li.remove();
+        });
+
+        todoListUl.appendChild(li);
+        todoInput.value = "";
+    });
+};
+
+addTodo();

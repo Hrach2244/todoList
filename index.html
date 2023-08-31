@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Todo List</title>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+    <main class="main">
+        <img src="./img/blue-bg.jpg" alt="main background image" class="main__bgi">
+
+        <section class="main-section">
+            <h1 class="h1 main-section__title">Todo List</h1>
+
+            <form action="#" id="todoForm" class="form">
+                <input type="text" autocomplete="off" placeholder="Write Your Todo!" id="todoInput" maxlength="150" required
+                    class="input form__input">
+
+                <button class="glow-on-hover btn form__btn" type="submit" id="todoButton">Add Todo</button>
+                <button class="glow-on-hover btn tel-btns form__btn" type="submit" id="todoButton">Add</button>
+            </form>
+
+
+            <ul class="todo-list" id="todo-list">
+            
+            </ul>
+        </section>
+    </main>
+
+    <script src="./script.js"></script>
+</body>
+
+</html>
