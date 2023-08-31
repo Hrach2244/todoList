@@ -68,15 +68,14 @@ const addTodo = () => {
                     };
                 }
                 
-                removeBtn.addEventListener("click", () => {
-                    li.remove();
-                });
-                telRemoveBtn.addEventListener("click", () => {
-                    li.remove();
-                })
             });
-    
             
+            removeBtn.addEventListener("click", () => {
+                li.remove();
+            });
+            telRemoveBtn.addEventListener("click", () => {
+                li.remove();
+            })
         }
 
         clickTodoBtn(checkBtn, removeBtn);
